@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from scishare import views
+from django.urls import include
+
+app_name = 'scishare'
 
 urlpatterns = [
+    path('', views.home, name='home'),
+    path('scishare/', include('scishare.urls')),
+    # The above maps any URLs starting with scishare/ to be handled by scishare.
     path('admin/', admin.site.urls),
 ]
