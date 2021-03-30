@@ -14,10 +14,10 @@ def register(request):
 def login(request):
     return HttpResponse("Login page.")
 
+#following make visible only after log in
 def search_results(request):
     return HttpResponse("show search results")
 
-#following make visible only after log in
 def categories(request):
     return HttpResponse("list of categories")
 
