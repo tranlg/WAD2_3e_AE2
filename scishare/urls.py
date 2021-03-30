@@ -16,5 +16,6 @@ urlpatterns = [
     path('groups/', views.groups, name='groups'),
     path('groups/create_group', views.create_group, name='create_group'),
     #path('groups/<group_name>', views.show_group, name='show_group'),
+    path('logout/', views.user_logout, name='logout'),
 
 ]

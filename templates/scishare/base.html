@@ -17,14 +17,17 @@
     {% endblock %}
 </div>
 <div>
-    <! -- make visible only if user is authenticated -->
     {% block sidebar_block %}
+    <! -- make visible only if user is authenticated -->
+    {% if user.is_authenticated %}
         <li><a href="{% url 'scishare:categories' %}">Categories</a></li>
         <li><a href="{% url 'scishare:most_liked' %}">Most Liked</a></li>
         <li><a href="{% url 'scishare:groups' %}">Your Groups</a></li>
-    <! -- else -->
+        <li><a href="{% url 'scishare:logout' %}">Log out</a></li>
+    {% else %}
         <li><a href="{% url 'scishare:register' %}">Sign Up</a></li>
-        <li><a href="{% url 'scishare:login' %}">Login</a></li>
+        <li><a href="{% url 'scishare:login' %}">Log In</a></li>
+    {% endif %}
     {% endblock %}
 
 </div>
