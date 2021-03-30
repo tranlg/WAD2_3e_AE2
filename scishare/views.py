@@ -5,8 +5,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse("Welcome to SciShare! please register <a href='/scishare/register/'>Register</a> "
-                        "or log in <a href='/scishare/login/'>Log in</a>")
+    context_dict = {'boldmessage': 'context dictionary'}
+    return render(request, 'scishare/home.html', context=context_dict)
+
 def register(request):
     return HttpResponse("Register page.")
 

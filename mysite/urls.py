@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from scishare import views
 from django.urls import include
+from django.conf import settings
+from django.conf.urls.static import static
 
 app_name = 'scishare'
 
@@ -25,4 +27,4 @@ urlpatterns = [
     path('scishare/', include('scishare.urls')),
     # The above maps any URLs starting with scishare/ to be handled by scishare.
     path('admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
